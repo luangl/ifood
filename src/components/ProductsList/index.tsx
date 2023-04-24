@@ -23,6 +23,7 @@ const ProductsList = ({ background, title, games }: Props) => (
             system={game.system}
             title={game.title}
             id={0}
+            titleava={game.titleava}
           />
         ))}
       </List>

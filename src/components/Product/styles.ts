@@ -33,13 +33,6 @@ export const Titulo = styled.h3`
   line-height: 21px;
   color: #e66767;
   margin-top: 8px;
-  img {
-    width: 20px;
-    height: 20px;
-    margin-left: 8px;
-    margin-right: 8px;
-    margin-top: 8, 5px;
-  }
 `
 export const AvaText = styled.h3`
   font-weight: 700;
@@ -59,6 +52,13 @@ export const Ava = styled.div`
   display: flex;
   text-align: center;
   justify-content: center;
+  img {
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: 8, 5px;
+  }
 `
 
 export const Infos = styled.div`

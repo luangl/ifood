@@ -11,9 +11,18 @@ type Props = {
   infos: string[]
   image: string
   id: number
+  titleava: string
 }
 
-const Product = ({ title, category, description, infos, image, id }: Props) => {
+const Product = ({
+  title,
+  category,
+  description,
+  infos,
+  image,
+  id,
+  titleava
+}: Props) => {
   const getDescricao = (descricao: string) => {
     if (descricao.length > 95) {
       return descricao.slice(0, 92) + '...'
@@ -22,7 +31,7 @@ const Product = ({ title, category, description, infos, image, id }: Props) => {
   }
 
   return (
-    <Card to={`/product/${id}`}>
+    <Card to="//categories">
       <img src={image} alt={title} />
       <Infos>
         {infos.map((info) => (
@@ -32,7 +41,7 @@ const Product = ({ title, category, description, infos, image, id }: Props) => {
       <Titulo>
         {title}
         <Ava>
-          <AvaText>4.9</AvaText>
+          <AvaText>{titleava}</AvaText>
           <img src={estrela} alt="" />
         </Ava>
       </Titulo>
