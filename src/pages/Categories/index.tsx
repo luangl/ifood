@@ -1,7 +1,9 @@
-import ProductsList from '../../components/ProductsList copy'
+import ProductsList from '../../components/ProductsList Perfil'
 import Game from '../../models/Game'
 
 import resident from '../../assets/images/pizza.png'
+import Header from '../../components/HeaderPerfil'
+import Banner from '../../components/Banner'
 
 const promocoes: Game[] = [
   {
@@ -74,6 +76,8 @@ const promocoes: Game[] = [
 
 const Categories = () => (
   <>
+    <Header />
+    <Banner />
     <ProductsList games={promocoes} title="RPG" background="gray" />
   </>
 )

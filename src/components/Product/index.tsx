@@ -31,7 +31,7 @@ const Product = ({
   }
 
   return (
-    <Card to="//categories">
+    <Card to="/categories">
       <img src={image} alt={title} />
       <Infos>
         {infos.map((info) => (
