@@ -1,5 +1,5 @@
 import ProductsList from '../../components/ProductsList'
-import Game from '../../models/Game'
+import Game from '../../models/Restaurante'
 
 import italiana from '../../assets/images/italiana.png'
 import sushi from '../../assets/images/sushi.png'

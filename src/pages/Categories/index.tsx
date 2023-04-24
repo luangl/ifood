@@ -1,5 +1,5 @@
 import ProductsList from '../../components/ProductsList Perfil'
-import Game from '../../models/Game'
+import Game from '../../models/Restaurante'
 
 import resident from '../../assets/images/pizza.png'
 import Header from '../../components/HeaderPerfil'
