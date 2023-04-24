@@ -12,7 +12,7 @@ const promocoes: Game[] = [
     description:
       'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida. Experimente o Japão sem sair do lar com nosso delivery!',
     title: 'Hioki Sushi',
-    titleava: '4,9',
+    titleava: '4.9',
     system: 'Windows',
     infos: ['Destaque da semana', 'Japonesa'],
     image: sushi
@@ -23,9 +23,9 @@ const promocoes: Game[] = [
     description:
       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
     title: 'La Dolce Vita Trattoria',
-    titleava: '4,6',
+    titleava: '4.6',
     system: 'PS5',
-    infos: ['italiana'],
+    infos: ['Italiana'],
     image: italiana
   },
   {
@@ -34,7 +34,7 @@ const promocoes: Game[] = [
     description:
       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
     title: 'La Dolce Vita Trattoria',
-    titleava: '4,6',
+    titleava: '4.6',
     system: 'Windows',
     infos: ['Italiana'],
     image: italiana
@@ -45,7 +45,7 @@ const promocoes: Game[] = [
     description:
       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
     title: 'La Dolce Vita Trattoria',
-    titleava: '4,6',
+    titleava: '4.6',
     system: 'Windows',
     infos: ['Italiana'],
     image: italiana
@@ -56,7 +56,7 @@ const promocoes: Game[] = [
     description:
       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
     title: 'La Dolce Vita Trattoria',
-    titleava: '4,6',
+    titleava: '4.6',
     system: 'Windows',
     infos: ['Italiana'],
     image: italiana
@@ -67,7 +67,7 @@ const promocoes: Game[] = [
     description:
       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
     title: 'La Dolce Vita Trattoria',
-    titleava: '4,6',
+    titleava: '4.6',
     system: 'Windows',
     infos: ['Italiana'],
     image: italiana

@@ -10,8 +10,8 @@ const promocoes: Game[] = [
     id: 1,
     category: 'Adicionar ao carrinho',
     description:
-      'Resident Evil 4, conhecido no Japão como Biohazard 4, é um jogo eletrônico de survival horror...',
-    title: 'Resident Evil 4',
+      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
+    title: 'Pizza Marguerita',
     titleava: '',
     system: 'Windows',
     infos: [],
@@ -21,8 +21,8 @@ const promocoes: Game[] = [
     id: 2,
     category: 'Adicionar ao carrinho',
     description:
-      'Resident Evil 4, conhecido no Japão como Biohazard 4, é um jogo eletrônico de survival horror...',
-    title: 'Resident Evil 4',
+      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
+    title: 'Pizza Marguerita',
     titleava: '',
     system: 'PS5',
     infos: [],
@@ -32,7 +32,18 @@ const promocoes: Game[] = [
     id: 3,
     category: 'Adicionar ao carrinho',
     description:
-      'Resident Evil 4, conhecido no Japão como Biohazard 4, é um jogo eletrônico de survival horror...',
+      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
+    title: 'Pizza Marguerita',
+    system: 'Windows',
+    titleava: '',
+    infos: [],
+    image: resident
+  },
+  {
+    id: 4,
+    category: 'Adicionar ao carrinho',
+    description:
+      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
     title: 'Resident Evil 4',
     system: 'Windows',
     titleava: '',
@@ -43,8 +54,8 @@ const promocoes: Game[] = [
     id: 4,
     category: 'Adicionar ao carrinho',
     description:
-      'Resident Evil 4, conhecido no Japão como Biohazard 4, é um jogo eletrônico de survival horror...',
-    title: 'Resident Evil 4',
+      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
+    title: 'Pizza Marguerita',
     system: 'Windows',
     titleava: '',
     infos: [],
@@ -54,19 +65,8 @@ const promocoes: Game[] = [
     id: 4,
     category: 'Adicionar ao carrinho',
     description:
-      'Resident Evil 4, conhecido no Japão como Biohazard 4, é um jogo eletrônico de survival horror...',
-    title: 'Resident Evil 4',
-    system: 'Windows',
-    titleava: '',
-    infos: [],
-    image: resident
-  },
-  {
-    id: 4,
-    category: 'Adicionar ao carrinho',
-    description:
-      'Resident Evil 4, conhecido no Japão como Biohazard 4, é um jogo eletrônico de survival horror...',
-    title: 'Resident Evil 4',
+      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
+    title: 'Pizza Marguerita',
     system: 'Windows',
     titleava: '',
     infos: [],

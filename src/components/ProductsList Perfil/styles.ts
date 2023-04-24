@@ -4,8 +4,8 @@ import { Props } from '.'
 import { Card } from '../Product Perfil/styles'
 
 export const Container = styled.section<Omit<Props, 'title' | 'games'>>`
-  padding: 32px 0;
-  background-color: #f5f5f5;
+  padding: 56px 0px 120px;
+  background-color: #fff8f2;
 
   ${Card} {
     background-color: #e66767;
@@ -21,9 +21,9 @@ export const List = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 32px;
-  margin-top: 56px;
-  margin-left: 171px;
-  margin-right: 171px;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
 `
 
 export const Title = styled.h2`
