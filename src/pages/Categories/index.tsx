@@ -6,7 +6,7 @@ import resident from '../../assets/images/pizza.png'
 const promocoes: Game[] = [
   {
     id: 1,
-    category: 'Ação',
+    category: 'Adicionar ao carrinho',
     description:
       'Resident Evil 4, conhecido no Japão como Biohazard 4, é um jogo eletrônico de survival horror...',
     title: 'Resident Evil 4',
@@ -17,7 +17,7 @@ const promocoes: Game[] = [
   },
   {
     id: 2,
-    category: 'Ação',
+    category: 'Adicionar ao carrinho',
     description:
       'Resident Evil 4, conhecido no Japão como Biohazard 4, é um jogo eletrônico de survival horror...',
     title: 'Resident Evil 4',
@@ -28,7 +28,7 @@ const promocoes: Game[] = [
   },
   {
     id: 3,
-    category: 'Ação',
+    category: 'Adicionar ao carrinho',
     description:
       'Resident Evil 4, conhecido no Japão como Biohazard 4, é um jogo eletrônico de survival horror...',
     title: 'Resident Evil 4',
@@ -39,7 +39,7 @@ const promocoes: Game[] = [
   },
   {
     id: 4,
-    category: 'Ação',
+    category: 'Adicionar ao carrinho',
     description:
       'Resident Evil 4, conhecido no Japão como Biohazard 4, é um jogo eletrônico de survival horror...',
     title: 'Resident Evil 4',
@@ -50,7 +50,7 @@ const promocoes: Game[] = [
   },
   {
     id: 4,
-    category: 'Ação',
+    category: 'Adicionar ao carrinho',
     description:
       'Resident Evil 4, conhecido no Japão como Biohazard 4, é um jogo eletrônico de survival horror...',
     title: 'Resident Evil 4',
@@ -61,7 +61,7 @@ const promocoes: Game[] = [
   },
   {
     id: 4,
-    category: 'Ação',
+    category: 'Adicionar ao carrinho',
     description:
       'Resident Evil 4, conhecido no Japão como Biohazard 4, é um jogo eletrônico de survival horror...',
     title: 'Resident Evil 4',

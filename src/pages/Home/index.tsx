@@ -3,6 +3,7 @@ import Game from '../../models/Game'
 
 import italiana from '../../assets/images/italiana.png'
 import sushi from '../../assets/images/sushi.png'
+import Header from '../../components/Header'
 
 const promocoes: Game[] = [
   {
@@ -74,6 +75,7 @@ const promocoes: Game[] = [
 ]
 const Home = () => (
   <>
+    <Header />
     <ProductsList games={promocoes} title="Promoções" background="gray" />
   </>
 )

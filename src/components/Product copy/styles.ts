@@ -9,16 +9,21 @@ export const Card = styled(Link)`
   text-decoration: none;
   color: ${cores.branca};
   display: block;
+  width: 338px;
 
   img {
-    display: block;
-    width: 100%;
-    height: 250px;
+    width: 322px;
+    margin-left: 8px;
+    margin-top: 8px;
     object-fit: cover;
   }
 
   ${TagContainer} {
     margin-right: 8px;
+    color: #e66767;
+    background-color: #ffebd9;
+    width: 322px;
+    text-align: center;
   }
 `
 
@@ -31,7 +36,7 @@ export const Titulo = styled.h3`
   margin-left: 7px;
   margin-bottom: 8px;
   line-height: 21px;
-  color: #e66767;
+  color: #ffebd9;
   margin-top: 8px;
 `
 export const AvaText = styled.h3`

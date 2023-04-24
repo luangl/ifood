@@ -31,7 +31,7 @@ const Product = ({
   }
 
   return (
-    <Card to="//categories">
+    <Card to="/Categories">
       <img src={image} alt={title} />
       <Infos>
         {infos.map((info) => (
@@ -42,7 +42,6 @@ const Product = ({
         {title}
         <Ava>
           <AvaText>{titleava}</AvaText>
-          <img src={estrela} alt="" />
         </Ava>
       </Titulo>
       <Descricao>{description}</Descricao>
