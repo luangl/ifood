@@ -13,7 +13,7 @@ export const Container = styled.section<Omit<Props, 'title' | 'restaurante'>>`
     border-width: 1px;
     border-style: solid;
     border-color: #e66767;
-    padding: 0px;
+    border-top: none;
   }
 `
 

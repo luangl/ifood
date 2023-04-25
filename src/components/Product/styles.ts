@@ -49,6 +49,15 @@ export const Descricao = styled.p`
   margin-right: 8px;
   margin-bottom: 20px;
 `
+export const Teste = styled.div`
+  img {
+    display: block;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+`
+
 export const Ava = styled.div`
   display: flex;
   text-align: center;

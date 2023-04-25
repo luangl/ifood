@@ -1,7 +1,7 @@
 import Tag from '../Tag'
 import estrela from '../../assets/images/estrela.png'
 
-import { Card, Descricao, Titulo, Infos, Ava, AvaText } from './styles'
+import { Card, Descricao, Titulo, Infos, Ava, AvaText, Teste } from './styles'
 
 type Props = {
   title: string
@@ -23,23 +23,27 @@ const Product = ({
   titleava
 }: Props) => {
   return (
-    <Card to="/categories">
-      <img src={image} alt={title} />
-      <Infos>
-        {infos.map((info) => (
-          <Tag key={info}>{info}</Tag>
-        ))}
-      </Infos>
-      <Titulo>
-        {title}
-        <Ava>
-          <AvaText>{titleava}</AvaText>
-          <img src={estrela} alt="" />
-        </Ava>
-      </Titulo>
-      <Descricao>{description}</Descricao>
-      <Tag>{category}</Tag>
-    </Card>
+    <Teste>
+      <div style={{ position: 'relative' }}>
+        <img src={image} alt={title} />
+        <Infos style={{ position: 'absolute', bottom: 0, right: 16 }}>
+          {infos.map((info) => (
+            <Tag key={info}>{info}</Tag>
+          ))}
+        </Infos>
+      </div>
+      <Card to="/categories">
+        <Titulo>
+          {title}
+          <Ava>
+            <AvaText>{titleava}</AvaText>
+            <img src={estrela} alt="" />
+          </Ava>
+        </Titulo>
+        <Descricao>{description}</Descricao>
+        <Tag>{category}</Tag>
+      </Card>
+    </Teste>
   )
 }
 
