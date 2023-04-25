@@ -1,5 +1,4 @@
 import Tag from '../Tag'
-import estrela from '../../assets/images/estrela.png'
 
 import { Card, Descricao, Titulo, Infos, Ava, AvaText } from './styles'
 
@@ -20,16 +19,8 @@ const Product = ({
   description,
   infos,
   image,
-  id,
   titleava
 }: Props) => {
-  const getDescricao = (descricao: string) => {
-    if (descricao.length > 95) {
-      return descricao.slice(0, 92) + '...'
-    }
-    return descricao
-  }
-
   return (
     <Card to="/Categories">
       <img src={image} alt={title} />

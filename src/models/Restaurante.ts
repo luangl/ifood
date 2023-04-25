@@ -1,4 +1,4 @@
-class Game {
+class Rest {
   category: string
   description: string
   image: string
@@ -29,4 +29,4 @@ class Game {
   }
 }
 
-export default Game
+export default Rest

@@ -1,11 +1,11 @@
 import ProductsList from '../../components/ProductsList'
-import Game from '../../models/Restaurante'
+import Rest from '../../models/Restaurante'
 
 import italiana from '../../assets/images/italiana.png'
 import sushi from '../../assets/images/sushi.png'
 import Header from '../../components/Header'
 
-const promocoes: Game[] = [
+const promocoes: Rest[] = [
   {
     id: 1,
     category: 'Saiba Mais',
@@ -76,7 +76,7 @@ const promocoes: Game[] = [
 const Home = () => (
   <>
     <Header />
-    <ProductsList games={promocoes} title="Promoções" background="gray" />
+    <ProductsList restaurante={promocoes} title="Promoções" background="gray" />
   </>
 )
 

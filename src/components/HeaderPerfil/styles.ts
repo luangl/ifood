@@ -32,15 +32,15 @@ export const Links = styled.ul`
   img {
     height: 57.5px;
     width: 125px;
-    margin-left: 341px;
+    margin-left: 380px;
     margin-right: 341px;
     margin-bottom: 40px;
-    margin-top: 28.75px;
+    margin-top: 25px;
   }
 `
 
 export const LinkItem = styled.li`
-  margin-right: 171px;
+  margin-right: 110px;
 `
 
 export const LinkCart = styled.a`

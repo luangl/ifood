@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Props } from '.'
 import { Card } from '../Product/styles'
 
-export const Container = styled.section<Omit<Props, 'title' | 'games'>>`
+export const Container = styled.section<Omit<Props, 'title' | 'restaurante'>>`
   padding-bottom: 120px;
   background-color: #fff8f2;
 
