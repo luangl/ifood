@@ -67,7 +67,6 @@ export const Ava = styled.div`
     height: 20px;
     margin-left: 8px;
     margin-right: 8px;
-    margin-top: 8, 5px;
   }
 `
 
