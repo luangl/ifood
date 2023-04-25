@@ -10,7 +10,7 @@ const promocoes: Rest[] = [
     id: 1,
     category: 'Adicionar ao carrinho',
     description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
+      'A clássica Marguerita: molho de tomate \nsuculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
     title: 'Pizza Marguerita',
     titleava: '',
     system: 'Windows',
@@ -21,7 +21,7 @@ const promocoes: Rest[] = [
     id: 2,
     category: 'Adicionar ao carrinho',
     description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
+      'A clássica Marguerita: molho de tomate \nsuculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
     title: 'Pizza Marguerita',
     titleava: '',
     system: 'PS5',
@@ -32,7 +32,7 @@ const promocoes: Rest[] = [
     id: 3,
     category: 'Adicionar ao carrinho',
     description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
+      'A clássica Marguerita: molho de tomate \nsuculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
     title: 'Pizza Marguerita',
     system: 'Windows',
     titleava: '',
@@ -43,7 +43,7 @@ const promocoes: Rest[] = [
     id: 4,
     category: 'Adicionar ao carrinho',
     description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
+      'A clássica Marguerita: molho de tomate \nsuculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
     title: 'Resident Evil 4',
     system: 'Windows',
     titleava: '',
@@ -54,7 +54,7 @@ const promocoes: Rest[] = [
     id: 4,
     category: 'Adicionar ao carrinho',
     description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
+      'A clássica Marguerita: molho de tomate \nsuculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
     title: 'Pizza Marguerita',
     system: 'Windows',
     titleava: '',
@@ -65,7 +65,7 @@ const promocoes: Rest[] = [
     id: 4,
     category: 'Adicionar ao carrinho',
     description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
+      'A clássica Marguerita: molho de tomate \nsuculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
     title: 'Pizza Marguerita',
     system: 'Windows',
     titleava: '',

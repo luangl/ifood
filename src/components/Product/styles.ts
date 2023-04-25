@@ -40,6 +40,7 @@ export const AvaText = styled.h3`
 `
 
 export const Descricao = styled.p`
+  white-space: pre-wrap;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;

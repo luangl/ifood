@@ -10,7 +10,7 @@ const promocoes: Rest[] = [
     id: 1,
     category: 'Saiba Mais',
     description:
-      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida. Experimente o Japão sem sair do lar com nosso delivery!',
+      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.\n Experimente o Japão sem sair do lar com nosso delivery!',
     title: 'Hioki Sushi',
     titleava: '4.9',
     system: 'Windows',
@@ -21,7 +21,7 @@ const promocoes: Rest[] = [
     id: 2,
     category: 'Saiba mais',
     description:
-      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
+      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! \nDesfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto \ndo seu lar. \nEntrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
     title: 'La Dolce Vita Trattoria',
     titleava: '4.6',
     system: 'PS5',
@@ -32,7 +32,7 @@ const promocoes: Rest[] = [
     id: 3,
     category: 'Saiba mais',
     description:
-      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
+      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! \nDesfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto \ndo seu lar. \nEntrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
     title: 'La Dolce Vita Trattoria',
     titleava: '4.6',
     system: 'Windows',
@@ -43,7 +43,7 @@ const promocoes: Rest[] = [
     id: 4,
     category: 'Saiba mais',
     description:
-      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
+      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! \nDesfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto \ndo seu lar. \nEntrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
     title: 'La Dolce Vita Trattoria',
     titleava: '4.6',
     system: 'Windows',
@@ -54,7 +54,7 @@ const promocoes: Rest[] = [
     id: 5,
     category: 'Saiba mais',
     description:
-      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
+      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! \nDesfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto \ndo seu lar. \nEntrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
     title: 'La Dolce Vita Trattoria',
     titleava: '4.6',
     system: 'Windows',
@@ -65,7 +65,7 @@ const promocoes: Rest[] = [
     id: 6,
     category: 'Saiba mais',
     description:
-      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
+      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! \nDesfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto \ndo seu lar. \nEntrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
     title: 'La Dolce Vita Trattoria',
     titleava: '4.6',
     system: 'Windows',
