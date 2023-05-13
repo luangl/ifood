@@ -170,6 +170,7 @@ export const Card = styled.div`
         height: 200px;
         width: 350px;
         margin-top: 16px;
+        margin-left: auto;
       }
     }
     .close {
@@ -195,8 +196,8 @@ export const Card = styled.div`
         height: 20px;
         width: 20px;
         margin-top: -600px;
-        margin-left: 387px;
         margin-right: 8px;
+        margin-left: 5px;
       }
     }
 
