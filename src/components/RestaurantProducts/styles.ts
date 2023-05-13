@@ -7,7 +7,7 @@ export const Card = styled.div`
   margin-bottom: 32px;
   color: ${colors.darkBg};
   font-size: 14px;
-  margin-top: 56px;
+  margin-top: 20px;
   margin-bottom: 0px;
   border-radius: 10px;
 
@@ -23,6 +23,10 @@ export const Card = styled.div`
   cursor: pointer;
   margin-top: 8px;
   border-radius: 0px;
+
+  @media (max-width: ${breakpoints.tabletmini}) {
+    font-size: 20px;
+  }
   }
 
   .popup {
@@ -62,15 +66,19 @@ export const Card = styled.div`
     align-items: flex-start;
     background: #E66767;
 
-    @media (max-width: ${breakpoints.tablet}) {
-      height: 600px;
-      width: 100%;
-      display: grid;
-    }
-
     @media (max-width: ${breakpoints.desktop}) {
       height: 600px;
       width: 100%;
+    }
+
+    @media (max-width: ${breakpoints.tabletmini}) {
+      height: 670px;
+    }
+
+    @media (max-width: ${breakpoints.tablet}) {
+      height: 620px;
+      width: 100%;
+      display: grid;
     }
 
     h3 {
@@ -82,15 +90,15 @@ export const Card = styled.div`
       margin-top: 32px;
       margin-bottom: 16px;
 
-      @media (max-width: ${breakpoints.tablet}) {
-        font-size: 18px;
-        margin-left: 4px;
-        margin-bottom: 5px;
-        margin-top: 9px;
-      }
-
       @media (max-width: ${breakpoints.desktop}) {
         font-size: 30px;
+      }
+
+      @media (max-width: ${breakpoints.tablet}) {
+        font-size: 25px;
+        margin-left: 4px;
+        margin-bottom: 10px;
+        margin-top: 9px;
       }
     }
 
@@ -111,16 +119,16 @@ export const Card = styled.div`
       padding-bottom: 4px;
       cursor: pointer;
 
-      @media (max-width: ${breakpoints.tablet}) {
-        width: 100%;
-        height: 35px;
-        font-size: 16px;
-      }
-
       @media (max-width: ${breakpoints.desktop}) {
         width: 100%;
         height: 40px;
         font-size: 18px;
+      }
+
+      @media (max-width: ${breakpoints.tablet}) {
+        width: 100%;
+        height: 35px;
+        font-size: 16px;
       }
     }
 
@@ -130,16 +138,18 @@ export const Card = styled.div`
       font-size: 14px;
       line-height: 22px;
 
-      @media (max-width: ${breakpoints.tablet}) {
-        font-size: 14px;
-        margin-left: 5px;
-      }
-
       @media (max-width: ${breakpoints.desktop}) {
         display: flex;
         font-size: 20px;
         flex-wrap: wrap;
         line-height: 30px;
+      }
+
+      @media (max-width: ${breakpoints.tablet}) {
+        font-size: 14px;
+        margin-left: 5px;
+        font-weight: bold;
+        line-height: 23px;
       }
     }
 
@@ -152,14 +162,14 @@ export const Card = styled.div`
       margin-right: 24px;
       margin-left: 32px;
 
+      @media (max-width: ${breakpoints.desktop}) {
+        margin-top: 135px;
+      }
+
       @media (max-width: ${breakpoints.tablet}) {
         height: 200px;
         width: 350px;
         margin-top: 16px;
-      }
-
-      @media (max-width: ${breakpoints.desktop}) {
-        margin-top: 135px;
       }
     }
     .close {
@@ -170,19 +180,23 @@ export const Card = styled.div`
       margin-right: 8px;
       cursor: pointer;
 
+      @media (max-width: ${breakpoints.desktop}) {
+        height: 30px;
+        width: 30px;
+      }
+
+      @media (max-width: ${breakpoints.tabletmini}) {
+        height: 20px;
+      }
+
       @media (max-width: ${breakpoints.tablet}) {
         max-height: 400px;
         max-width: 100%;
         height: 20px;
         width: 20px;
-        margin-top: -580px;
+        margin-top: -600px;
         margin-left: 387px;
         margin-right: 8px;
-      }
-
-      @media (max-width: ${breakpoints.desktop}) {
-        height: 30px;
-        width: 30px;
       }
     }
 
@@ -196,6 +210,14 @@ export const CardContent = styled.div`
 
   img {
     border-radius: 10px;
+
+    @media (max-width: ${breakpoints.tabletmini}) {
+      width: 100%;
+    }
+
+    @media (max-width: ${breakpoints.tablet}) {
+      width: 100%;
+    }
   }
 `
 
@@ -203,6 +225,10 @@ export const CardTitle = styled.h3`
   font-size: 16px;
   font-weight: 900;
   padding-top: 8px;
+
+  @media (max-width: ${breakpoints.tabletmini}) {
+    font-size: 30px;
+  }
 `
 
 export const CardDescription = styled.p`
@@ -210,6 +236,10 @@ export const CardDescription = styled.p`
   line-height: 22px;
   padding-top: 8px;
   padding-bottom: 8px;
+
+  @media (max-width: ${breakpoints.tabletmini}) {
+    font-size: 20px;
+  }
 `
 
 export const CardLink = styled(Link)`

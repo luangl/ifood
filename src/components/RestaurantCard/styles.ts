@@ -82,12 +82,12 @@ export const CardImg = styled.div`
   background-size: cover;
   position: relative;
 
-  @media (max-width: ${breakpoints.tablet}) {
+  @media (max-width: ${breakpoints.desktop}) {
     width: 100%;
     background-size: cover;
   }
 
-  @media (max-width: ${breakpoints.desktop}) {
+  @media (max-width: ${breakpoints.tablet}) {
     width: 100%;
     background-size: cover;
   }

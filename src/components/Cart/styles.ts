@@ -36,13 +36,13 @@ export const Sidebar = styled.aside`
   max-width: 360px;
   width: 100%;
 
-  @media (max-width: ${breakpoints.tablet}) {
-    width: auto;
-  }
-
   @media (max-width: ${breakpoints.desktop}) {
     max-width: 400px;
     width: 100%;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: auto;
   }
 
   button {
@@ -106,12 +106,12 @@ export const CartItem = styled.li`
     margin-left: 8px;
     margin-top: 8px;
 
-    @media (max-width: ${breakpoints.tablet}) {
-      margin-right: 5px;
-    }
-
     @media (max-width: ${breakpoints.desktop}) {
       font-size: 20px;
+    }
+
+    @media (max-width: ${breakpoints.tablet}) {
+      margin-right: 5px;
     }
   }
 

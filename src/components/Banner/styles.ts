@@ -4,7 +4,7 @@ import { breakpoints, colors } from '../../styles'
 export const BannerBg = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
-  height: 150px;
+  height: 280px;
   width: 100%;
   font-size: 32px;
   color: ${colors.white};
@@ -21,6 +21,10 @@ export const BannerContainer = styled.div`
 
 export const BannerTitle = styled.h2`
   font-weight: 900;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 31px;
+  }
 `
 
 export const BannerSubTitle = styled.h3`
