@@ -4,10 +4,12 @@ import headerBg from '../../assets/images/fundo.svg'
 import logo from '../../assets/images/logo.svg'
 
 import { open } from '../../store/reducers/cart'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootReducer } from '../../store'
 
 const HeaderRestaurante = () => {
   const dispatch = useDispatch()
+  const { items } = useSelector((state: RootReducer) => state.cart)
 
   const openCart = () => {
     dispatch(open())
@@ -19,7 +21,9 @@ const HeaderRestaurante = () => {
         <a href="/">
           <img src={logo} alt="eFood" />
         </a>
-        <CartButton onClick={openCart}>0 produto(s) no carrinho</CartButton>
+        <CartButton onClick={openCart}>
+          {items.length} produto(s) no carrinho
+        </CartButton>
       </HeaderContainer>
     </Header>
   )

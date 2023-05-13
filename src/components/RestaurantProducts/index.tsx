@@ -3,6 +3,11 @@ import { Card, CardContent, CardDescription, CardTitle } from './styles'
 
 import close from '../../assets/images/food/card/close.png'
 
+import { useDispatch } from 'react-redux'
+
+import { add, open } from '../../store/reducers/cart'
+import Home from '../../pages/Home'
+
 type Props = {
   img: string
   title: string
@@ -29,6 +34,13 @@ const RestaurantProducts = ({
     setIsPopupOpen(false)
   }
 
+  const dispatch = useDispatch()
+
+  const addToCart = () => {
+    dispatch(add(Home))
+    dispatch(open())
+  }
+
   return (
     <Card>
       <CardContent>
@@ -48,7 +60,9 @@ const RestaurantProducts = ({
               <p>{popupDescription}</p>
               <div className="separar"></div>
               <p>{popupDescriptionserving}</p>
-              <button>Adicionar ao carrinho - R$ 60,90</button>
+              <button onClick={addToCart}>
+                Adicionar ao carrinho - R$ 60,90
+              </button>
             </div>
             <img className="close" src={close}></img>
           </div>
