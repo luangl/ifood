@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 import { Link } from 'react-router-dom'
 
 export const Card = styled.div`
@@ -20,6 +20,10 @@ export const CardTitle = styled.h3`
   padding-bottom: 16px;
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: ${breakpoints.desktop}) {
+    font-size: 19px;
+  }
 `
 
 export const CardRating = styled.div`
@@ -28,6 +32,10 @@ export const CardRating = styled.div`
   span {
     margin-right: 8px;
   }
+
+  @media (max-width: ${breakpoints.desktop}) {
+    font-size: 19px;
+  }
 `
 
 export const CardButton = styled(Link)`
@@ -35,11 +43,37 @@ export const CardButton = styled(Link)`
   color: ${colors.darkBg};
   padding: 4px 6px;
   text-decoration: none;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 30px;
+  }
+
+  @media (max-width: ${breakpoints.desktop}) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 35px;
+  }
 `
 
 export const About = styled.p`
   font-weight: normal;
   margin-bottom: 20px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 16px;
+  }
+
+  @media (max-width: ${breakpoints.desktop}) {
+    font-size: 16px;
+  }
 `
 
 export const CardImg = styled.div`
@@ -47,6 +81,16 @@ export const CardImg = styled.div`
   height: 218px;
   background-size: cover;
   position: relative;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 100%;
+    background-size: cover;
+  }
+
+  @media (max-width: ${breakpoints.desktop}) {
+    width: 100%;
+    background-size: cover;
+  }
 `
 
 export const CardInfoContainer = styled.div`
@@ -54,6 +98,10 @@ export const CardInfoContainer = styled.div`
   justify-content: flex-end;
   padding-top: 16px;
   padding-right: 16px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 15px;
+  }
 `
 
 export const CardInfo = styled.span`
@@ -61,4 +109,9 @@ export const CardInfo = styled.span`
   color: ${colors.darkBg};
   padding: 6px 4px;
   margin-left: 8px;
+
+  @media (max-width: ${breakpoints.desktop}) {
+    font-size: 15px;
+    align-items: center;
+  }
 `

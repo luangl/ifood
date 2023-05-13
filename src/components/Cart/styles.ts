@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import fechar from '../../assets/images/food/cart/lixeira.png'
+import { breakpoints } from '../../styles'
 
 export const Overlay = styled.div`
   position: absolute;
@@ -35,6 +36,15 @@ export const Sidebar = styled.aside`
   max-width: 360px;
   width: 100%;
 
+  @media (max-width: ${breakpoints.tablet}) {
+    width: auto;
+  }
+
+  @media (max-width: ${breakpoints.desktop}) {
+    max-width: 400px;
+    width: 100%;
+  }
+
   button {
     width: 100%;
     background-color: #ffebd9;
@@ -48,6 +58,11 @@ export const Sidebar = styled.aside`
     font-size: 14px;
     line-height: 16px;
     text-align: center;
+
+    @media (max-width: ${breakpoints.desktop}) {
+      font-size: 20px;
+      height: 33px;
+    }
   }
 `
 
@@ -57,6 +72,10 @@ export const Prices = styled.p`
   color: #eee;
   margin-top: 32px;
   margin-bottom: 16px;
+
+  @media (max-width: ${breakpoints.desktop}) {
+    font-size: 18px;
+  }
 `
 
 export const Texto = styled.div`
@@ -86,6 +105,14 @@ export const CartItem = styled.li`
     font-size: 18px;
     margin-left: 8px;
     margin-top: 8px;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      margin-right: 5px;
+    }
+
+    @media (max-width: ${breakpoints.desktop}) {
+      font-size: 20px;
+    }
   }
 
   span {
@@ -95,6 +122,10 @@ export const CartItem = styled.li`
     font-size: 14px;
     margin-top: 16px;
     margin-left: 8px;
+
+    @media (max-width: ${breakpoints.desktop}) {
+      font-size: 18px;
+    }
   }
 
   button {
@@ -106,5 +137,8 @@ export const CartItem = styled.li`
     position: absolute;
     bottom: 8px;
     right: 8px;
+
+    @media (max-width: ${breakpoints.desktop}) {
+    }
   }
 `

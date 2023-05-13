@@ -1,13 +1,17 @@
 import styled from 'styled-components'
-import { colors } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
 export const BannerBg = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
-  height: 280px;
+  height: 150px;
   width: 100%;
   font-size: 32px;
   color: ${colors.white};
+
+  @media (max-width: ${breakpoints.tablet}) {
+    background-size: cover;
+  }
 `
 
 export const BannerContainer = styled.div`

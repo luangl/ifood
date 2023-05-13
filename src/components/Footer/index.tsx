@@ -1,4 +1,4 @@
-import { Container, Description, Logo } from './styles'
+import { Container, Description, Logo, SocialMedias } from './styles'
 
 import instagram from '../../assets/images/footer/instagram.png'
 import facebook from '../../assets/images/footer/facebook.png'
@@ -10,7 +10,7 @@ const Footer = () => (
   <Container>
     <Logo src={logo} alt="eFood" />
     <nav>
-      <ul>
+      <SocialMedias>
         <li>
           <a href="#">
             <img src={instagram} alt="Instagram" />
@@ -26,7 +26,7 @@ const Footer = () => (
             <img src={twitter} alt="Twitter" />
           </a>
         </li>
-      </ul>
+      </SocialMedias>
     </nav>
     <Description>
       A efood é uma plataforma para divulgação de estabelecimentos, a

@@ -7,6 +7,11 @@ export const colors = {
   darkBg: '#FFEBD9'
 }
 
+export const breakpoints = {
+  desktop: '1024px',
+  tablet: '768px'
+}
+
 export const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
@@ -24,6 +29,10 @@ export const GlobalStyle = createGlobalStyle`
     max-width: 1024px;
     width: 100%;
     margin: 0 auto;
+
+    @media (max-width: ${breakpoints.desktop}) {
+      max-width: 80%;
+      width: 100%;
   }
 `
 
@@ -34,4 +43,8 @@ export const Background = styled.div`
   text-align: center;
   padding-top: 64px;
   padding-bottom: 40px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    height: 310px;
+  }
 `

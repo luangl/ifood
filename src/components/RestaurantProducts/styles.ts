@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 import { Link } from 'react-router-dom'
 
 export const Card = styled.div`
@@ -62,6 +62,17 @@ export const Card = styled.div`
     align-items: flex-start;
     background: #E66767;
 
+    @media (max-width: ${breakpoints.tablet}) {
+      height: 600px;
+      width: 100%;
+      display: grid;
+    }
+
+    @media (max-width: ${breakpoints.desktop}) {
+      height: 600px;
+      width: 100%;
+    }
+
     h3 {
       font-family: 'Roboto';
       font-style: normal;
@@ -70,6 +81,17 @@ export const Card = styled.div`
       line-height: 21px;
       margin-top: 32px;
       margin-bottom: 16px;
+
+      @media (max-width: ${breakpoints.tablet}) {
+        font-size: 18px;
+        margin-left: 4px;
+        margin-bottom: 5px;
+        margin-top: 9px;
+      }
+
+      @media (max-width: ${breakpoints.desktop}) {
+        font-size: 30px;
+      }
     }
 
     button {
@@ -88,6 +110,18 @@ export const Card = styled.div`
       padding-top: 4px;
       padding-bottom: 4px;
       cursor: pointer;
+
+      @media (max-width: ${breakpoints.tablet}) {
+        width: 100%;
+        height: 35px;
+        font-size: 16px;
+      }
+
+      @media (max-width: ${breakpoints.desktop}) {
+        width: 100%;
+        height: 40px;
+        font-size: 18px;
+      }
     }
 
     p {
@@ -95,6 +129,18 @@ export const Card = styled.div`
       font-weight: 400;
       font-size: 14px;
       line-height: 22px;
+
+      @media (max-width: ${breakpoints.tablet}) {
+        font-size: 14px;
+        margin-left: 5px;
+      }
+
+      @media (max-width: ${breakpoints.desktop}) {
+        display: flex;
+        font-size: 20px;
+        flex-wrap: wrap;
+        line-height: 30px;
+      }
     }
 
     img {
@@ -105,6 +151,16 @@ export const Card = styled.div`
       margin-top: 32px;
       margin-right: 24px;
       margin-left: 32px;
+
+      @media (max-width: ${breakpoints.tablet}) {
+        height: 200px;
+        width: 350px;
+        margin-top: 16px;
+      }
+
+      @media (max-width: ${breakpoints.desktop}) {
+        margin-top: 135px;
+      }
     }
     .close {
       height: 16px;
@@ -113,6 +169,21 @@ export const Card = styled.div`
       margin-left: 0px;
       margin-right: 8px;
       cursor: pointer;
+
+      @media (max-width: ${breakpoints.tablet}) {
+        max-height: 400px;
+        max-width: 100%;
+        height: 20px;
+        width: 20px;
+        margin-top: -580px;
+        margin-left: 387px;
+        margin-right: 8px;
+      }
+
+      @media (max-width: ${breakpoints.desktop}) {
+        height: 30px;
+        width: 30px;
+      }
     }
 
   }
