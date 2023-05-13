@@ -16,3 +16,8 @@ export const HeaderText = styled.p`
 export const Header = styled(Background)`
   height: 186px;
 `
+export const CartButton = styled.p`
+  color: ${colors.salmon};
+  font-size: 18px;
+  font-weight: 900;
+`
