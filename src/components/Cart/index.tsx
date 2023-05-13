@@ -22,6 +22,7 @@ const Cart = () => {
     dispatch(close())
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const getTotalPrice = (items: any[]) => {
     return items.reduce((total, item) => {
       return total + item.price
