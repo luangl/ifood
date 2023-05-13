@@ -20,4 +20,5 @@ export const CartButton = styled.p`
   color: ${colors.salmon};
   font-size: 18px;
   font-weight: 900;
+  cursor: pointer;
 `
