@@ -11,7 +11,7 @@ import pizza from '../../assets/images/food/pizza.png'
 import { useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
 import { useDispatch } from 'react-redux'
-import { close } from '../../store/reducers/cart'
+import { close, remove } from '../../store/reducers/cart'
 
 const Cart = () => {
   const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
@@ -28,6 +28,10 @@ const Cart = () => {
     }, 0)
   }
 
+  const removeItem = (index: number) => {
+    dispatch(remove(index))
+  }
+
   return (
     <CartContainer className={isOpen ? 'is-open' : ''}>
       <Overlay onClick={closeCart} />
@@ -40,7 +44,7 @@ const Cart = () => {
                 <h3>Pizza Marguerita</h3>
                 <span>R$ 60,90</span>
               </div>
-              <button type="button" />
+              <button onClick={() => removeItem(index)} type="button" />
             </CartItem>
           ))}
         </ul>
