@@ -16,6 +16,9 @@ import { useDispatch } from 'react-redux'
 import { close, remove, removeAll } from '../../store/reducers/cart'
 import { useState, useEffect } from 'react'
 import InputMask from 'react-input-mask'
+import * as Yup from 'yup'
+import { useFormik } from 'formik'
+import _ from 'lodash'
 
 const Cart = () => {
   const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
@@ -39,23 +42,23 @@ const Cart = () => {
                 }
               ],
               delivery: {
-                receiver: 'string',
+                receiver: formik.values.receiver,
                 address: {
-                  description: 'string',
-                  city: 'string',
-                  zipCode: 'string',
-                  number: 'number',
+                  description: formik.values.address,
+                  city: formik.values.city,
+                  zipCode: formik.values.zipCode,
+                  number: formik.values.number,
                   complement: 'string'
                 }
               },
               payment: {
                 card: {
-                  name: 'string',
-                  number: 'string',
-                  code: 'number',
+                  name: formik.values.cardName,
+                  number: formik.values.cardNumber,
+                  code: formik.values.cardCvv,
                   expires: {
-                    month: 1,
-                    year: 2023
+                    month: formik.values.cardExpirationMonth,
+                    year: formik.values.cardExpirationYear
                   }
                 }
               }
@@ -131,6 +134,52 @@ const Cart = () => {
     setShowFinalizePayment(false)
   }
 
+  const validationSchema = Yup.object().shape({
+    cardName: Yup.string().required('O campo Nome no cartão é obrigatório'),
+    cardNumber: Yup.string()
+      .required('O campo Número do cartão é obrigatório')
+      .matches(/\d{4} \d{4} \d{4} \d{4}/, 'Formato inválido'),
+    cardCvv: Yup.string()
+      .required('CVV é obrigatório')
+      .matches(/\d{3}/, 'Formato inválido'),
+    cardExpirationMonth: Yup.string()
+      .required('O campo Mês de vencimento é obrigatório')
+      .matches(/0[1-9]|1[0-2]/, 'Mês inválido'),
+    cardExpirationYear: Yup.string()
+      .required('O campo Ano de vencimento é obrigatório')
+      .matches(/\d{4}/, 'Ano inválido'),
+    receiver: Yup.string()
+      .required('O campo Quem irá receber é obrigatório')
+      .min(3, 'Mínimo de 3 letras'),
+    address: Yup.string().required('O campo Endereço é obrigatório'),
+    city: Yup.string().required('O campo Cidade é obrigatório'),
+    zipCode: Yup.string()
+      .required('O campo CEP é obrigatório')
+      .min(7, '8 números'),
+    number: Yup.number()
+      .typeError('O campo Número deve ser um número')
+      .required('O campo Número é obrigatório')
+  })
+
+  const formik = useFormik({
+    initialValues: {
+      cardName: '',
+      cardNumber: '',
+      cardCvv: '',
+      cardExpirationMonth: '',
+      cardExpirationYear: '',
+      receiver: '',
+      address: '',
+      city: '',
+      zipCode: '',
+      number: ''
+    },
+    validationSchema: validationSchema,
+    onSubmit: (values) => {
+      // lógica para enviar os dados do formulário
+    }
+  })
+
   return (
     <CartContainer className={isOpen ? 'is-open' : ''}>
       <Overlay onClick={closeCart} />
@@ -181,36 +230,100 @@ const Cart = () => {
                 .replace('.', ',')}{' '}
             </h3>
             <h4>Nome no cartão</h4>
-            <input type="text" placeholder="" />
+            <input
+              type="text"
+              name="cardName"
+              onChange={(e) => {
+                const onlyLetters = /^[A-Za-z\s]+$/
+                if (e.target.value.match(onlyLetters)) {
+                  formik.handleChange(e)
+                }
+              }}
+              onBlur={formik.handleBlur}
+              value={formik.values.cardName}
+            />
+            {formik.touched.cardName && formik.errors.cardName && (
+              <div className="error-message">{formik.errors.cardName}</div>
+            )}
             <Inputs>
               <div>
                 <h4>Número do cartão</h4>
                 <InputMask
                   id="numerocartao"
-                  placeholder=""
                   mask="9999 9999 9999 9999"
+                  name="cardNumber"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.cardNumber}
                 />
+                {formik.touched.cardNumber && formik.errors.cardNumber && (
+                  <div className="error-message">
+                    {formik.errors.cardNumber}
+                  </div>
+                )}
               </div>
 
               <div>
                 <h4>CVV</h4>
-                <InputMask placeholder="" mask="999" />
+                <InputMask
+                  mask="999"
+                  name="cardCvv"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.cardCvv}
+                />
+                {formik.touched.cardCvv && formik.errors.cardCvv && (
+                  <div className="error-message">{formik.errors.cardCvv}</div>
+                )}
               </div>
             </Inputs>
             <Inputs>
               <div>
                 <h4>Mês de vencimento</h4>
-                <InputMask placeholder="" mask="99" />
+                <InputMask
+                  name="cardExpirationMonth"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.cardExpirationMonth}
+                  mask="99"
+                />
+                {formik.touched.cardExpirationMonth &&
+                  formik.errors.cardExpirationMonth && (
+                    <div className="error-message">
+                      {formik.errors.cardExpirationMonth}
+                    </div>
+                  )}
               </div>
 
               <div>
                 <h4>Ano de vencimento</h4>
-                <InputMask placeholder="" mask="9999" />
+                <InputMask
+                  type="text"
+                  name="cardExpirationYear"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.cardExpirationYear}
+                  mask="9999"
+                />
+                {formik.touched.cardExpirationYear &&
+                  formik.errors.cardExpirationYear && (
+                    <div className="error-message">
+                      {formik.errors.cardExpirationYear}
+                    </div>
+                  )}
               </div>
             </Inputs>
             <Botao>
-              <button onClick={handleFinalizePayment}>
-                Continuar com o pagamento
+              <button
+                onClick={handleFinalizePayment}
+                disabled={
+                  _.isEmpty(formik.values.cardName) ||
+                  _.isEmpty(formik.values.cardCvv) ||
+                  _.isEmpty(formik.values.cardExpirationMonth) ||
+                  _.isEmpty(formik.values.cardExpirationYear)
+                }
+              >
+                Finalizar o pagamento
               </button>
               <button onClick={handleGoOneBack}>
                 Voltar para a edição de endereço
@@ -221,25 +334,96 @@ const Cart = () => {
           <div>
             <h3 className="entrega">Entrega</h3>
             <h4>Quem irá receber</h4>
-            <input type="text" placeholder="" required />
+            <input
+              type="text"
+              name="receiver"
+              onChange={(e) => {
+                const onlyLetters = /^[A-Za-z\s]+$/
+                if (e.target.value.match(onlyLetters)) {
+                  formik.handleChange(e)
+                }
+              }}
+              onBlur={formik.handleBlur}
+              value={formik.values.receiver}
+            />
+            {formik.touched.receiver && formik.errors.receiver && (
+              <div className="error-message">{formik.errors.receiver}</div>
+            )}
             <h4>Endereço</h4>
-            <input type="text" placeholder="" />
+            <input
+              type="text"
+              name="address"
+              onChange={(e) => {
+                const onlyLetters = /^[A-Za-z\s]+$/
+                if (e.target.value.match(onlyLetters)) {
+                  formik.handleChange(e)
+                }
+              }}
+              onBlur={formik.handleBlur}
+              value={formik.values.address}
+            />
+            {formik.touched.address && formik.errors.address && (
+              <div className="error-message">{formik.errors.address}</div>
+            )}
             <h4>Cidade</h4>
-            <input type="text" placeholder="" />
+            <input
+              type="text"
+              name="city"
+              onChange={(e) => {
+                const onlyLetters = /^[A-Za-z\s]+$/
+                if (e.target.value.match(onlyLetters)) {
+                  formik.handleChange(e)
+                }
+              }}
+              onBlur={formik.handleBlur}
+              value={formik.values.city}
+            />
+            {formik.touched.city && formik.errors.city && (
+              <div className="error-message">{formik.errors.city}</div>
+            )}
             <Inputs>
               <div>
                 <h4>CEP</h4>
-                <InputMask placeholder="" mask="99999-999" />
+                <InputMask
+                  mask="99999-999"
+                  maskChar=""
+                  name="zipCode"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.zipCode}
+                />
+                {formik.touched.zipCode && formik.errors.zipCode && (
+                  <div className="error-message">{formik.errors.zipCode}</div>
+                )}
               </div>
               <div>
                 <h4>Número</h4>
-                <input type="number" placeholder="" />
+                <input
+                  type="text"
+                  name="number"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.number}
+                  required
+                />
+                {formik.touched.number && formik.errors.number && (
+                  <div className="error-message">{formik.errors.number}</div>
+                )}
               </div>
             </Inputs>
             <h4>Complemento (opcional)</h4>
-            <input type="text" placeholder="" />
+            <input name="complement" type="text" placeholder="" />
             <Botao>
-              <button onClick={handleContinuePayment}>
+              <button
+                onClick={handleContinuePayment}
+                disabled={
+                  _.isEmpty(formik.values.receiver) ||
+                  _.isEmpty(formik.values.address) ||
+                  _.isEmpty(formik.values.city) ||
+                  _.isEmpty(formik.values.zipCode) ||
+                  _.isEmpty(formik.values.number)
+                }
+              >
                 Continuar com o pagamento
               </button>
               <button onClick={handleGoBack}>Voltar para o carrinho</button>

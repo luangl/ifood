@@ -26,6 +26,11 @@ export const Textofinal = styled.p`
   line-height: 22px;
 
   color: #ffebd9;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 15px;
+    display: contents;
+  }
 `
 
 export const CartContainer = styled.div`
