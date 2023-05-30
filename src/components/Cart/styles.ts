@@ -26,6 +26,55 @@ export const CartContainer = styled.div`
   &.is-open {
     display: flex;
   }
+
+  h3 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 16px;
+
+    color: #ffebd9;
+  }
+
+  h4 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+
+    color: #ffebd9;
+  }
+
+  input {
+    display: block;
+    width: 100%;
+    height: 32px;
+    border: none;
+    padding: 8px;
+
+    background: #ffebd9;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: #4b4b4b;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    h3 {
+      font-size: 15px;
+    }
+    h4 {
+      font-size: 14px;
+    }
+  }
 `
 export const Sidebar = styled.aside`
   background-color: #e66767;
@@ -42,7 +91,7 @@ export const Sidebar = styled.aside`
   }
 
   @media (max-width: ${breakpoints.tablet}) {
-    width: auto;
+    width: 300px;
   }
 
   button {
@@ -75,6 +124,37 @@ export const Prices = styled.p`
 
   @media (max-width: ${breakpoints.desktop}) {
     font-size: 18px;
+  }
+`
+
+export const Botao = styled.div`
+  margin-top: 24px;
+
+  button {
+    height: 24px;
+    margin-bottom: 8px;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    button {
+      font-size: 15px;
+    }
+  }
+`
+
+export const Inputs = styled.div`
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 34px;
+
+  #numerocartao {
+    width: 228px;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    #numerocartao {
+      width: 100%;
+    }
   }
 `
 
