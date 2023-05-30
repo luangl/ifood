@@ -9,18 +9,73 @@ import {
   Botao,
   Textofinal
 } from './styles'
-import sushi from '../../assets/images/food/sushi.png'
 import pizza from '../../assets/images/food/pizza.png'
 import { useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
 import { useDispatch } from 'react-redux'
 import { close, remove, removeAll } from '../../store/reducers/cart'
-import { useState } from 'react'
-import { usePurchaseMutation } from '../../services/api'
+import { useState, useEffect } from 'react'
+import InputMask from 'react-input-mask'
 
 const Cart = () => {
   const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
+  const [orderId, setOrderId] = useState('')
 
+  useEffect(() => {
+    const fetchOrderId = async () => {
+      try {
+        const response = await fetch(
+          'https://fake-api-tau.vercel.app/api/efood/checkout',
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              products: [
+                {
+                  id: 'number',
+                  price: 'number'
+                }
+              ],
+              delivery: {
+                receiver: 'string',
+                address: {
+                  description: 'string',
+                  city: 'string',
+                  zipCode: 'string',
+                  number: 'number',
+                  complement: 'string'
+                }
+              },
+              payment: {
+                card: {
+                  name: 'string',
+                  number: 'string',
+                  code: 'number',
+                  expires: {
+                    month: 1,
+                    year: 2023
+                  }
+                }
+              }
+            })
+          }
+        )
+
+        const data = await response.json()
+
+        // Assuming the API response contains an `orderId` field
+        const { orderId } = data
+
+        setOrderId(orderId)
+      } catch (error) {
+        console.error('Error fetching order ID:', error)
+      }
+    }
+
+    fetchOrderId()
+  }, [])
   const dispatch = useDispatch()
 
   const closeCart = () => {
@@ -80,9 +135,14 @@ const Cart = () => {
     <CartContainer className={isOpen ? 'is-open' : ''}>
       <Overlay onClick={closeCart} />
       <Sidebar>
-        {showFinalizePayment ? (
+        {items.length < 1 ? ( // Condição para verificar se não há itens no carrinho
           <div>
-            <h3 className="pagamento">Pedido realizado - </h3>
+            <h2>Carrinho vazio</h2>
+            <h4>Adicione itens ao seu carrinho para continuar.</h4>
+          </div>
+        ) : showFinalizePayment ? (
+          <div>
+            <h3 className="pagamento">Pedido realizado - {orderId}</h3>
             <Textofinal>
               Estamos felizes em informar que seu pedido já está em processo de
               preparação e, em breve, será entregue no endereço fornecido.
@@ -125,23 +185,27 @@ const Cart = () => {
             <Inputs>
               <div>
                 <h4>Número do cartão</h4>
-                <input id="numerocartao" type="number" placeholder="" />
+                <InputMask
+                  id="numerocartao"
+                  placeholder=""
+                  mask="9999 9999 9999 9999"
+                />
               </div>
 
               <div>
                 <h4>CVV</h4>
-                <input type="number" placeholder="" />
+                <InputMask placeholder="" mask="999" />
               </div>
             </Inputs>
             <Inputs>
               <div>
                 <h4>Mês de vencimento</h4>
-                <input type="number" placeholder="" />
+                <InputMask placeholder="" mask="99" />
               </div>
 
               <div>
                 <h4>Ano de vencimento</h4>
-                <input type="number" placeholder="" />
+                <InputMask placeholder="" mask="9999" />
               </div>
             </Inputs>
             <Botao>
@@ -157,7 +221,7 @@ const Cart = () => {
           <div>
             <h3 className="entrega">Entrega</h3>
             <h4>Quem irá receber</h4>
-            <input type="text" placeholder="" />
+            <input type="text" placeholder="" required />
             <h4>Endereço</h4>
             <input type="text" placeholder="" />
             <h4>Cidade</h4>
@@ -165,7 +229,7 @@ const Cart = () => {
             <Inputs>
               <div>
                 <h4>CEP</h4>
-                <input type="number" placeholder="" />
+                <InputMask placeholder="" mask="99999-999" />
               </div>
               <div>
                 <h4>Número</h4>

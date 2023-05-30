@@ -65,6 +65,11 @@ export const CartContainer = styled.div`
     color: #ffebd9;
   }
 
+  h2 {
+    color: #eee;
+    margin-bottom: 30px;
+  }
+
   input {
     display: block;
     width: 100%;
