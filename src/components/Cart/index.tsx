@@ -6,15 +6,17 @@ import {
   Texto,
   CartItem,
   Inputs,
-  Botao
+  Botao,
+  Textofinal
 } from './styles'
 import sushi from '../../assets/images/food/sushi.png'
 import pizza from '../../assets/images/food/pizza.png'
 import { useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
 import { useDispatch } from 'react-redux'
-import { close, remove } from '../../store/reducers/cart'
+import { close, remove, removeAll } from '../../store/reducers/cart'
 import { useState } from 'react'
+import { usePurchaseMutation } from '../../services/api'
 
 const Cart = () => {
   const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
@@ -23,6 +25,10 @@ const Cart = () => {
 
   const closeCart = () => {
     dispatch(close())
+  }
+
+  const handleRemoveAllItems = () => {
+    dispatch(removeAll())
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -39,6 +45,7 @@ const Cart = () => {
   const [showInputs, setShowInputs] = useState(false)
   const [showContent, setShowContent] = useState(true)
   const [showPaymentInputs, setShowPaymentInputs] = useState(false)
+  const [showFinalizePayment, setShowFinalizePayment] = useState(false)
 
   const handleContinueDelivery = () => {
     setShowContent(false)
@@ -50,23 +57,62 @@ const Cart = () => {
     setShowPaymentInputs(true)
   }
 
+  const handleFinalizePayment = () => {
+    setShowPaymentInputs(false)
+    setShowFinalizePayment(true)
+  }
+
   const handleGoBack = () => {
     setShowContent(true)
     setShowInputs(false)
     setShowPaymentInputs(false)
+    setShowFinalizePayment(false)
   }
 
   const handleGoOneBack = () => {
     setShowContent(false)
     setShowInputs(true)
     setShowPaymentInputs(false)
+    setShowFinalizePayment(false)
   }
 
   return (
     <CartContainer className={isOpen ? 'is-open' : ''}>
       <Overlay onClick={closeCart} />
       <Sidebar>
-        {showPaymentInputs ? (
+        {showFinalizePayment ? (
+          <div>
+            <h3 className="pagamento">Pedido realizado - </h3>
+            <Textofinal>
+              Estamos felizes em informar que seu pedido já está em processo de
+              preparação e, em breve, será entregue no endereço fornecido.
+              <br></br>
+              <br></br>
+              Gostaríamos de ressaltar que nossos entregadores não estão
+              autorizados a realizar cobranças extras.
+              <br></br>
+              <br></br>
+              Lembre-se da importância de higienizar as mãos após o recebimento
+              do pedido, garantindo assim sua segurança e bem-estar durante a
+              refeição.
+              <br></br>
+              <br></br>
+              Esperamos que desfrute de uma deliciosa e agradável experiência
+              gastronômica. Bom apetite!
+            </Textofinal>
+            <Botao>
+              <button
+                onClick={() => {
+                  closeCart()
+                  handleGoBack()
+                  handleRemoveAllItems()
+                }}
+              >
+                Concluir
+              </button>
+            </Botao>
+          </div>
+        ) : showPaymentInputs ? (
           <div>
             <h3 className="pagamento">
               Pagamento - Valor a pagar R${' '}
@@ -99,7 +145,9 @@ const Cart = () => {
               </div>
             </Inputs>
             <Botao>
-              <button>Finalizar pagamento</button>
+              <button onClick={handleFinalizePayment}>
+                Continuar com o pagamento
+              </button>
               <button onClick={handleGoOneBack}>
                 Voltar para a edição de endereço
               </button>

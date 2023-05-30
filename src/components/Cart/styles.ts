@@ -13,6 +13,21 @@ export const Overlay = styled.div`
   opacity: 0.7;
 `
 
+export const Textofinal = styled.p`
+  width: 344px;
+  height: 286px;
+  left: 1014px;
+  top: 67px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+
+  color: #ffebd9;
+`
+
 export const CartContainer = styled.div`
   position: fixed;
   top: 0;
